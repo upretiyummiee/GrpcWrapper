@@ -1,0 +1,14 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "customstream";
+
+service Streamer{
+
+	rpc GetCount(google.protobuf.Empty) returns (stream Count);
+}
+
+message Count{
+	int32 c = 1;
+}
